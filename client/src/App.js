@@ -7,7 +7,7 @@ import { setCurrentUser, logoutUser } from "./actions/authActions";
 import { Provider } from "react-redux";
 import store from "./store";
 
-import Navbar from "./components/layout/Navbar";
+//import Navbar from "./components/layout/Navbar";
 import Landing from "./components/layout/Landing";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
@@ -37,17 +37,32 @@ if (localStorage.jwtToken) {
 }
 class App extends Component {
   render() {
+    
+    const divStyle = {
+      color: "#B2F302",
+      backgroundImage: 'url(  https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX2171719.jpg )',
+      backgroundSize: "cover"
+    };
+    const divStyle1 = {
+      backgroundImage:'url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZSVsnrZoC7mfY01G4MxgTCozHXVzmZhsHplLo9FwzSw9gCTCp ) ',
+      backgroundSize: "cover",
+      padding: "none",
+      fontSize: "35px"
+      
+
+    }
     return (
       <Provider store={store}>
         <Router>
-          <div className="App">
-            <Navbar />
+          <div className="App" style={divStyle}>
+            
             <Route exact path="/" component={Landing} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
             </Switch>
+           
           </div>
         </Router>
       </Provider>
