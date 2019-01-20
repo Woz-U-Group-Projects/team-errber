@@ -48,23 +48,31 @@ class Login extends Component {
 
     this.props.loginUser(userData);
   };
+  
 
   render() {
     const { errors } = this.state;
 
+    const divStyle = {
+      color: "#B2F302",
+      backgroundImage: 'url(http://backgroundcheckall.com/wp-content/uploads/2017/12/smokey-background.jpg)',
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no',
+    };
+
     return (
-      <div className="container">
-        <div style={{ marginTop: "4rem" }} className="row">
+      <div style={divStyle} style={{ height: "100vh" }} className="container">
+        <div>
           <div className="col s8 offset-s2">
-            <Link to="/" className="btn-flat waves-effect">
-              <i className="material-icons left">keyboard_backspace</i> Back to
+            <Link to="/" className="btn-flat waves-effect blue-text">
+              <i className="material-icons left blue-text">keyboard_backspace</i> Back to
               home
             </Link>
             <div className="col s12" style={{ paddingLeft: "11.250px" }}>
               <h4>
                 <b>Login</b> below
               </h4>
-              <p className="grey-text text-darken-1">
+              <p className="white-text text-darken-1">
                 Don't have an account? <Link to="/register">Register</Link>
               </p>
             </div>
@@ -72,6 +80,7 @@ class Login extends Component {
               <div className="input-field col s12">
                 <input
                   onChange={this.onChange}
+                  style={{color:"gray"}}
                   value={this.state.email}
                   error={errors.email}
                   id="email"
@@ -89,13 +98,14 @@ class Login extends Component {
               <div className="input-field col s12">
                 <input
                   onChange={this.onChange}
+                  style={{color:"gray"}}
                   value={this.state.password}
                   error={errors.password}
                   id="password"
                   type="password"
                   className={classnames("", {
                     invalid: errors.password || errors.passwordincorrect
-                  })}
+                  })} 
                 />
                 <label htmlFor="password">Password</label>
                 <span className="red-text">

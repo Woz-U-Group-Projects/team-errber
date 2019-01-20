@@ -51,13 +51,19 @@ class Register extends Component {
 
   render() {
     const { errors } = this.state;
+    const divStyle = {
+      color: "#B2F302",
+      backgroundImage: 'url(http://backgroundcheckall.com/wp-content/uploads/2017/12/smokey-background.jpg)',
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no',
+    };
 
     return (
-      <div className="container">
+      <div style={divStyle} style={{ height: "100vh" }} className="container">
         <div className="row">
           <div className="col s8 offset-s2">
-            <Link to="/" className="btn-flat waves-effect">
-              <i className="material-icons left">keyboard_backspace</i> Back to
+            <Link to="/" className="btn-flat waves-effect blue-text">
+              <i className="material-icons left blue-text">keyboard_backspace</i> Back to
               home
             </Link>
             <div className="col s12" style={{ paddingLeft: "11.250px" }}>
@@ -72,6 +78,7 @@ class Register extends Component {
               <div className="input-field col s12">
                 <input
                   onChange={this.onChange}
+                  style={{color:"gray"}}
                   value={this.state.name}
                   error={errors.name}
                   id="name"
@@ -80,12 +87,13 @@ class Register extends Component {
                     invalid: errors.name
                   })}
                 />
-                <label htmlFor="name">Name</label>
+                <label htmlFor="name">Full Name</label>
                 <span className="red-text">{errors.name}</span>
               </div>
               <div className="input-field col s12">
                 <input
                   onChange={this.onChange}
+                  style={{color:"gray"}}
                   value={this.state.email}
                   error={errors.email}
                   id="email"
@@ -100,6 +108,7 @@ class Register extends Component {
               <div className="input-field col s12">
                 <input
                   onChange={this.onChange}
+                  style={{color:"gray"}}
                   value={this.state.password}
                   error={errors.password}
                   id="password"
@@ -114,6 +123,7 @@ class Register extends Component {
               <div className="input-field col s12">
                 <input
                   onChange={this.onChange}
+                  style={{color:"gray"}}
                   value={this.state.password2}
                   error={errors.password2}
                   id="password2"
