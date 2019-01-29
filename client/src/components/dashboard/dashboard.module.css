@@ -1,0 +1,30 @@
+.try{
+    display: grid;
+    grid-template-rows: 25% 25% 50%;
+    padding: none;
+    background-image: 'url(http://backgroundcheckall.com/wp-content/uploads/2017/12/smokey-background.jpg)';
+    background-size: "cover";
+    
+
+
+}
+.productheader{
+    display: grid;
+}
+.products{
+    display: grid;
+    grid-row: 1;
+    grid-column: 1/4;
+    justify-content: start
+}
+.header{
+    display: grid;
+    grid-row: 1;
+}
+.table{
+    
+    border: .1em solid red;
+    text-justify: auto;
+    font-size: .5cm;
+    
+}

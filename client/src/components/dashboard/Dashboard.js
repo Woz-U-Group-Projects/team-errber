@@ -5,6 +5,14 @@ import { logoutUser } from "../../actions/authActions";
 import "./dash.css";
 import logo from './logoFull.png';
 
+import {Container} from 'reactstrap';
+import store from '../../store';
+import ShoppingList from '../shoppinglist/ShoppingList';
+import {Provider} from 'react-redux';
+import ItemModal from "../itemmodal/ItemModal";
+import styles from './dashboard.module.css';
+//import {Button} from 'reactstrap';
+
 //import { Link } from "react-router-dom";
 
 
@@ -13,6 +21,8 @@ class Dashboard extends Component {
     e.preventDefault();
     this.props.logoutUser();
   };
+
+
 
   render() {
     const { user } = this.props.auth;
@@ -29,11 +39,11 @@ class Dashboard extends Component {
     }
 
     return (
-      <div style={divStyle}>
-        
+      <div className={styles.try}>
+          <div className={styles.header}>
            <header type="container" style={divStyle1}>
            <img src={logo} width='150px'/>  
-            <span style={{fontSize: "18px"}}> {user.name.split(" ")[0]}</span>
+            
             
             <button            
               onClick={this.onLogoutClick}
@@ -44,16 +54,28 @@ class Dashboard extends Component {
             
                           
             </header>            
+        </div>
+      <div style={{ height: "100vh" }} >
         
-      <div style={{ height: "100vh" }} className="container valign-wrapper">
-        
-        <div className="row">
-          <div className="landing-copy col s12 center-align">
+        <div >
+          <div >
             <h4>
-              <div>
+              <div className={styles.producthead}>
                 Products
               </div>
+             <div></div>
+              <Provider store={store} className={styles.products}>
+                
+                  
+                  
+                  <Container>     
+                    <ShoppingList />
+                  </Container>
+                
+              </Provider>
+                         
             </h4>
+            
            
           </div>
         </div>

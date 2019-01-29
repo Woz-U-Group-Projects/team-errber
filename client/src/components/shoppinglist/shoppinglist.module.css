@@ -1,0 +1,28 @@
+.try{
+    display: grid;
+    grid-template-columns: 70% 30%;
+    background-color: darkslategrey;
+    padding: none;
+    
+
+
+}
+.name{
+
+}
+.company{
+    
+    
+
+}
+.price{
+
+}
+.table{
+    
+    border-spacing: .05em;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    justify-items: stretch;
+    
+}

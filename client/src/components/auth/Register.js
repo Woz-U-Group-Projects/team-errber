@@ -9,7 +9,8 @@ class Register extends Component {
   constructor() {
     super();
     this.state = {
-      name: "",
+      firstName: "",
+      lastName: "",
       email: "",
       password: "",
       password2: "",
@@ -40,7 +41,8 @@ class Register extends Component {
     e.preventDefault();
 
     const newUser = {
-      name: this.state.name,
+      firstName: this.state.firstName,
+      lastName: this.state.lastName,
       email: this.state.email,
       password: this.state.password,
       password2: this.state.password2
@@ -79,15 +81,32 @@ class Register extends Component {
                 <input
                   onChange={this.onChange}
                   style={{color:"gray"}}
-                  value={this.state.name}
-                  error={errors.name}
-                  id="name"
+                  value={this.state.firstName}
+                  error={errors.firstName}
+                  id="firstName"
                   type="text"
                   className={classnames("", {
-                    invalid: errors.name
+                    invalid: errors.firstName
                   })}
                 />
-                <label htmlFor="name">Full Name</label>
+                
+                <label htmlFor="firstName">First Name</label>
+                <span className="red-text">{errors.name}</span>
+              </div>
+              <div className="input-field col s12">
+                
+                <input
+                  onChange={this.onChange}
+                  style={{color:"gray"}}
+                  value={this.state.lastName}
+                  error={errors.lastName}
+                  id="lastName"
+                  type="text"
+                  className={classnames("", {
+                    invalid: errors.lastName
+                  })}
+                />
+                <label htmlFor="lastName">Last Name</label>
                 <span className="red-text">{errors.name}</span>
               </div>
               <div className="input-field col s12">
